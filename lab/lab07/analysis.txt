@@ -1,0 +1,23 @@
+// Phot Koseekrainiramon (z5387411)
+// on 17/07/2022
+NOTE:
+- Your time complexities should be expressed in big-O notation and be in
+  terms of n, where n is the number of cells in the maze.
+
+============
+  solveBfs
+============
+
+- Worst case time complexity: O(n)
+
+- Explanation: Even checking every box in a maze and find a way back is still
+O(n) because we don't have any loop inside a loop here. 
+
+============
+  solveDfs
+============
+
+- Worst case time complexity: O(n)
+
+- Explanation: Working like solveBfs but using stack instead of queue.
+

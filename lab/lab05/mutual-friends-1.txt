@@ -1,0 +1,16 @@
++ Harry
++ Pete
++ Earn
++ Ron
++ Hermione
+f Harry Pete
+f Earn Hermione
+f Hermione Pete
+f Harry Ron
+f Ron Hermione
+u Earn Ron
+m Harry Hermione
+m Earn Pete
+u Earn Hermione
+m Pete Earn
+r Pete

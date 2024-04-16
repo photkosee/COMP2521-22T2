@@ -1,0 +1,176 @@
+// COMP2521 22T2 Assignment 1
+// Phot Koseekrainiramon (z5387411)
+// on 24/06/2022 - 30/06/2022
+
+========================================================================
+                          Complexity Analysis
+========================================================================
+
+NOTE:
+- Your time complexities should be in big-O notation.
+- For operations that involve only one set, your time complexities should
+  be in terms of n, where n is the number of elements in the set.
+- For operations that involve two sets, your time complexities should be in
+  terms of n and m, where n and m are the number of elements in each of the
+  sets respectively.
+
+
+--------
+SetUnion
+--------
+
+Worst case complexity: O((n * log n) + (m * log(n + m)))
+
+Explanation: it runs through nth elements in a tree and use function TreeInsert 
+to insert each element into a new tree so this will be n * log n because 
+worst case for TreeInsert is when it has to search untill the bottom of the 
+tree, however, it is a balanced tree so the time complexity depends on it's 
+height. We are inserting nth times assuming that the two sets have no elements 
+in common. And do this again to insert each element of second tree to the new 
+tree which is m * log(n + m).
+
+
+---------------
+SetIntersection
+---------------
+
+Worst case complexity: O(n * log m)
+
+Explanation: it runs through nth elements in a tree and use function TreeInsert 
+and TreeContains to check if the element in the first tree exists in the second 
+tree and insert that element into a new tree. The worst case of TreeContains is 
+when it has to search to the bottom of the tree, however, it is a balanced tree 
+so the time complexity depends on it's height. Assuming first set has every 
+elements in common with the second set but second set has way more elements. 
+The worst for inserting would be relied on first one log n but worst case for 
+TreeContain would be log m. We know that m is bigger than n, then it should be 
+n * log m.
+
+
+-------------
+SetDifference
+-------------
+
+Worst case complexity: O(n * log m)
+
+Explanation: it runs through nth elements in a tree and use TreeContains and 
+TreeInsert to check if the element in the first tree exists in the second tree
+and insert the element to a new tree if the element is not existing. The worst 
+for inserting would be relied on first one log n but worst case for TreeContain 
+would be log m. We assume that m is bigger than n, then it should be n * log m. 
+  
+
+---------
+SetEquals
+---------
+
+Worst case complexity: O(n * log m)
+
+Explanation: it runs through nth elements in a tree and use TreeContains to 
+check if the element in the first tree exists in the second tree or not. This 
+will be n * log m becasue it goes to each element in the first tree but 
+searching for the element in the second tree which depends on the second 
+tree's hight.
+
+
+---------
+SetSubset
+---------
+
+Worst case complexity: O(n * log m)
+
+Explanation: it runs through nth elements in a tree and use TreeContains to 
+check if the element in the first tree exists in the second tree or not. This 
+will be n * log m becasue it goes to each element in the first tree but 
+searching for the element in the second tree which depends on the second 
+tree's hight.
+
+
+--------
+SetFloor
+--------
+
+Worst case complexity: O(log n)
+
+Explanation: it searches for the largest but less than or equal to the given 
+item so that the worst case is when it has to search to the bottom of the tree,
+it will depend on the tree height which is log(n).
+
+
+----------
+SetCeiling
+----------
+
+Worst case complexity: O(log n)
+
+Explanation: it searches for the smallest but greater than or equal to the 
+given item so that the worst case is when it has to search to the bottom of the 
+tree, it will depend on the tree height which is log(n).
+
+
+========================================================================
+               Design Documentation for Cursor Operations
+========================================================================
+
+If you completed the cursor operations, you must explain the design and
+implementation of your solution here.
+
+----------
+Design & Implementation
+----------
+
+Explanation: I added more pointers to the struct node to point to it's parent, 
+next and previous as described in SetStructs.h. And I came up with an 
+algorithm I added to function newTree to make pointer next pointing to the
+node that has smallest item but more than current item without changing the 
+time complexity of the function.
+
+First we have to check that the new node is a left or right child, if it is  
+a left child, put the new tree to be in the middle of parent's pre and parent 
+then set new to be the next greater value of parent's previous value if 
+possible. If new tree is a right child, set the new tree to be the next greater 
+value of it's parent and make it to be previous value of the next value of it's 
+parent if possible. This part would be easier to draw a diagram to explain. 
+
+However, after we have got those pointer working as plan, it is easy now.
+Because I can create a list on function SetCursorNew and make it points to 
+the smallest value in the tree by using pointer min in set. And call a 
+single free for function SetCurosrFree. Finally, for SetCursorNext, we would 
+get use of the pointer next we have made and move to current's next value 
+using the next pointer. They are all constant time with a small amount lines 
+of code.
+
+----------
+SetCursorNew
+----------
+
+Worst case complexity: O(1)
+
+Explanation: it runs in a constant time no matter how many inputs because it is 
+using only malloc().
+
+----------
+SetCursorFree
+----------
+
+Worst case complexity: O(1)
+
+Explanation: it runs in a constant time no matter how many inputs because it is 
+using only free().
+
+----------
+SetCursorNext
+----------
+
+Worst case complexity: O(1)
+
+Explanation: it runs in a constant time no matter how many inputs because it 
+will just point to the next tree node.
+
+
+
+
+
+
+
+

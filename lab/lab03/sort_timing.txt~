@@ -1,0 +1,33 @@
+// Phot Koseekrainiramon (z5387411)
+// on 10/06/2022
+// Comparing time complexity between function sortInyList and function sort.
+
+Input      Initial    Number     AvgTime            AvgTime
+Size       Order      of Runs    for sortIntList    for sort
+10000      random     10         0.25 sec           0.00 sec
+10000      sorted     10         0.15 sec           0.00 sec
+10000      reverse    10         0.14 sec           0.00 sec
+20000      random     10         1.18 sec           0.00 sec
+20000      sorted     10         0.61 sec           0.00 sec
+20000      reverse    10         0.55 sec           0.00 sec
+50000      random     5          13.53 sec          0.02 sec
+50000      sorted     5          3.82 sec           0.00 sec
+50000      reverse    5          3.51 sec           0.00 sec
+100000     random     5          87.06 sec          0.04 sec
+100000     sorted     5          15.18 sec          0.01 sec
+100000     reverse    5          14.28 sec          0.01 sec
+
+Explanation of timing results:
+    From the results , I assume that the time complexity of my code(sortIntList) 
+is O(n^2). According to my code, the run times are supposed to be the same no 
+matter what the inputs are because I wrote it to loop through the whole list in 
+all cases except the list is null. However, it takes much longer for random 
+follow by sorted and reverse-sorted. I think the reason behind this is that the 
+caching between nodes to be farer. But all of them are still the same O(n^2) 
+with the x^2 = 4ay parabola (quadratic) from the graph when having input size as 
+an x-axis and computing time as a y-axis. Double-check with the coding part, 
+first we have for-loop which is n and inside that we have while-loop, that is 
+why it happens to be n * ((n / 2) + (n / 2)) to have the result O(n^2). And for 
+the given code(sort), I think it's time coplexity is O(log(n)) or O(nlog(n)) 
+because the growth rate of it's time complexity is quite slow.
+

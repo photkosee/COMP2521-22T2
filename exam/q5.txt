@@ -1,0 +1,107 @@
+Question 5
+
+Initial contents of the dist[] and pred[] arrays:
+
+     0   1   2   3   4   5   6   7
+dist inf inf inf inf inf inf inf inf
+pred -1  -1  -1  -1  -1  -1  -1  -1
+
+TIP: You can copy-paste and update this as you visit each vertex.
+
+------------------------------------------------------------------------
+Iteration 1
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   6   9   inf inf inf 10  3
+pred -1  0   0   -1  -1  -1  0   0
+(0 out)
+------------------------------------------------------------------------
+Iteration 2
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   5   9   inf 14  inf 6   3
+pred -1  7   0   -1  7   -1  7   0
+(7 out)
+------------------------------------------------------------------------
+Iteration 3
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   5   9   inf 14  inf 6   3
+pred -1  7   0   -1  7   -1  7   0
+(1 out)
+------------------------------------------------------------------------
+Iteration 4
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   5   9   inf 14  inf 6   3
+pred -1  7   0   -1  7   -1  7   0
+(6 out)
+------------------------------------------------------------------------
+Iteration 5
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   5   9   inf 14  inf 6   3
+pred -1  7   0   -1  7   -1  7   0
+(2 out)
+------------------------------------------------------------------------
+Iteration 6
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   5   9   21  14  25  6   3
+pred -1  7   0   4   7   4   7   0
+(4 out)
+------------------------------------------------------------------------
+Iteration 7
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   5   9   21  14  25  6   3
+pred -1  7   0   4   7   4   7   0
+(3 out)
+------------------------------------------------------------------------
+Iteration 8
+
+Which vertex is visited? 
+
+What are the contents of the dist[] and pred[] arrays at the end of this
+iteration?
+
+     0   1   2   3   4   5   6   7
+dist 0   5   9   21  14  25  6   3
+pred -1  7   0   4   7   4   7   0
+(5 out)
+------------------------------------------------------------------------

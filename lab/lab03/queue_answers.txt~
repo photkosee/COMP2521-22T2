@@ -1,0 +1,91 @@
+// Phot Koseekrainiramon (z5387411)
+// on 10/06/2022 
+// listing time complexsitiy of each following function in each following file.
+
+NOTE:
+- Your time complexities should be expressed in big-O notation and be in
+  terms of n, where n is the size (i.e., number of items) of the queue
+
+=========
+ListQueue
+=========
+
+-------------+----------------------------------------------------------
+             |                    time complexity
+  operation  +-----------------+------------------+---------------------
+             |    best case    |    worst case    |      amortised
+-------------+-----------------+------------------+---------------------
+             |                 |                  |
+   enqueue   |      O(1)       |       O(n)       |        O(1)
+             |                 |                  |
+-------------+-----------------+------------------+---------------------
+             |                 |                  |
+   dequeue   |      O(1)       |       O(1)       |        O(1)
+             |                 |                  |
+-------------+-----------------+------------------+---------------------
+For ListQueue: 
+-enqueue: the best case of enqueue is if the head of the queue is NULL 
+then it will run pass 1 if-staement and set its pointer which take just O(1).
+The worst case of enqueue is that the head of the list is not NULL,
+that makes the program run through nth elements in the list makes it O(n).
+Which leave the amortised to be O(1) by combining O(1) and O(n) divide by n.
+(n - 1) + n / n == O(2 - (1 / n)) that leads to O(1).
+-dequeue: the best case and worst case of dequeue are the same no matter nth 
+elements becasue there's no looping through any nth elements, considering free() 
+is O(1) so both are O(1) and the same goes for amortised. 
+
+==========
+ArrayQueue
+==========
+
+-------------+----------------------------------------------------------
+             |                    time complexity
+  operation  +-----------------+------------------+---------------------
+             |    best case    |    worst case    |      amortised
+-------------+-----------------+------------------+---------------------
+             |                 |                  |
+   enqueue   |      O(1)       |       O(n)       |        O(1)
+             |                 |                  |
+-------------+-----------------+------------------+---------------------
+             |                 |                  |
+   dequeue   |      O(1)       |       O(n)       |        O(1)
+             |                 |                  |
+-------------+-----------------+------------------+---------------------
+For ArrayQueue:
+-enqueue: the best case is for any case that q->size != q->capacity which will 
+not call realloc(), so it is O(1). The worst case is that q->size == q->capacity
+so it will call realloc that makes it to be O(n). Which leave the amortised to 
+be O(1) by combining O(1) and O(n) divide by n.
+-dequeue: the best case is q->size == 1 so that it doen't have to loop through 
+for-loop, so it is O(1). The worst case is that you have to loop through the nth
+size of the array which makes it O(n). Which leave the amortised to be O(1) by 
+combining O(1) and O(n) divide by n.
+
+
+==================
+CircularArrayQueue
+==================
+
+-------------+----------------------------------------------------------
+             |                    time complexity
+  operation  +-----------------+------------------+---------------------
+             |    best case    |    worst case    |      amortised
+-------------+-----------------+------------------+---------------------
+             |                 |                  |
+   enqueue   |      O(1)       |       O(n)       |        O(1)
+             |                 |                  |
+-------------+-----------------+------------------+---------------------
+             |                 |                  |
+   dequeue   |      O(1)       |       O(1)       |        O(1)
+             |                 |                  |
+-------------+-----------------+------------------+---------------------
+For CircularArrayQueue:
+-enqueue: the best case is when q->size < q->capacity so that it doesn't have to
+call realloc(), having to go through the if-stagement or not isn't effect the 
+fact that it will be O(1). the worst case is that q->size = q->capacity so it 
+has to call for realloc and run through for-loop that will lead it to be 
+O(n + n - 2), so it is O(n). Which leave the amortised to be O(1) by combining 
+O(1) and O(n) divide by n.
+-dequeue: the best case and the worst case are the same becasue it doesn't have 
+to run through ant nth loop, so that both of them are O(1) w 
+

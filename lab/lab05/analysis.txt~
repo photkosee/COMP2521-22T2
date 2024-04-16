@@ -1,0 +1,35 @@
+// Phot Koseekrainiramon (z5387411)
+// on 06/07/2022
+NOTE:
+- Your time complexities should be expressed in big-O notation and be in
+  terms of n, where n is the number of people who  have  been  added  to
+  Friendbook.
+
+===============
+  FbUnfriend
+===============
+
+- Worst case time complexity: O(...)
+
+- Explanation: ...
+
+===============
+FbMutualFriends
+===============
+
+- Worst case time complexity: O(n^2)
+
+- Explanation: First while loop looping through all friends of name1 ~= n and 
+inside the loop also looping through all friend of name2 ~= n, so it will be 
+O(n * n). 
+
+===============
+ FbFriendRecs1
+===============
+
+- Worst case time complexity: O(n^4)
+
+- Explanation: There is a loop through all people inside a loop through all 
+people which ~= n^2. Deep in it we call function FbMutualFriends which is n^2, 
+so the whole function will be (n^2)*(n^2). 
+

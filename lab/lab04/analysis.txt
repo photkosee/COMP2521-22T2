@@ -1,0 +1,38 @@
+// Phot Koseekrainiramon (z5387411)
+// COMP2521 lab04
+// on 18/06/2022
+
+NOTE:
+- Your time complexities should be expressed in big-O notation and be in
+  terms of n, where n is the size of the tree.
+
+==================
+  BSTreeNumLeaves
+==================
+
+- Worst case time complexity: O(n)
+
+- Explanation: it's worst case is when there is only 1 leaf on the tree (when the tree has only 
+left or right side), that means you have to run through nodes nth times to serch for that 
+leaf whether on the left or right side.
+
+==================
+BSTreeDeleteLeaves
+==================
+
+- Worst case time complexity: O(n)
+
+- Explanation: it's worst case is when there is only 1 leaf on the tree (when the tree has only 
+left or right side), that means you have to run through nodes nth times to delete leaf 
+whether on the left or right side.
+
+==================
+ BSTreeLevelOrder
+==================
+
+- Worst case time complexity: O(n)
+
+- Explanation: it's worst case is when there is only 1 leaf on the tree (when the tree has only 
+left or right side), that means you have to run through nodes nth times to print out each node.
+
+

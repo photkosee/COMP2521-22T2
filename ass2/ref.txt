@@ -1,0 +1,1 @@
+usage: /web/cs2521/22T2/ass/ass2/reference/game <city data file> <agent data file> <cycles> [seed]
